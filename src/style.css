@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-image: url(img/architecture-blur-building-125532.jpg);
+  background-size: 100vmax;
+}
+
+h1 {
+  border: solid 2px;
+  background-color: rgba(5, 1, 1, 0.767);;
+  color: white;
+  padding: 8px;
+  border-radius: 7px;
+}
+
+main {
+  flex: 1 0 auto;
+} 
+
+footer {
+  background-color: #333333;
+  color: white; 
+}
+
+.form-register {
+  background: rgba(5, 1, 1, 0.767);
+  padding: 10px 20px;
+  border-radius: 7px;
+}
+
+
+.input-field .prefix {
+  color: yellowgreen;
+  font-size: 24px;
+}
+ 
+.input-field .prefix.active {
+  color: white;
+}
+
+.material-icons .prefix.active {
+  color: white;
+}
+
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid #333333;
+  -webkit-box-shadow: 0 1px 0 0 #333333;
+  box-shadow: 0 1px 0 0 white;
+}
+ 
+input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label,
+input[type=text]:not(.browser-default):focus:not([readonly]) + label {
+  color: white;
+}
+
+.btn-color {
+  color: #333333;
+  font-weight: bold;
+}
