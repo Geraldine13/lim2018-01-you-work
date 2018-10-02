@@ -3,7 +3,8 @@ body {
   min-height: 100vh;
   flex-direction: column;
   background-image: url(img/architecture-blur-building-125532.jpg);
-  background-size: 100vmax;
+  background-size: 100vmax 100vh;
+  background-repeat: no-repeat;
 }
 
 h1 {
