@@ -27,7 +27,16 @@
   <main>
     <div class="container form-register center-align">
       <div class="row">
+        
+
       <form>
+          <div class="inputs">
+              <div class="col s12">
+                  <p class="date-of-visit">Fecha de Visita</p> 
+                  <p id="date-visit" class="date-of-visit"></p>
+              </div>
+          </div>
+          <div class="col s12 l6 left-align">
           <div class="inputs">
               <div class="input-field col s12">
                 <i class="material-icons prefix">contacts</i>
@@ -51,21 +60,29 @@
               <label for="email">Email</label>             
             </div>
           </div>
+
           <div class="inputs">
-            <div class="input-field col s12">
-              <i class="material-icons prefix">lock</i>
-              <input id="password" type="password" class="validate">
-              <label for="password">Contraseña</label>
-              <span id="error-password"></span>
-            </div>
+              <div class="col s12">
+                <i class="material-icons prefix">person_pin</i>
+                <select id="staff">
+                    <option value="" selected>Elije de la lista</option>
+                  
+                </select>
+                <label>Personal a visitar</label>
+              </div>
           </div>
           
-          <div id="photo">
-            <video></video>
-            <canvas></canvas>
-            <button class="btn-photo">¡Haz Foto!</button>
-          </div>
+          
+        <div class="col s12 l6 section-photo">
 
+          <img src="http://placekitten.com/g/320/261" id="photo-replace" alt="photo"><br>
+          <button id="capture-photo" type="button" class="btn modal-trigger light-green accent-2">Foto</button>
+        </div>
+        <div id="photo">
+          <video id="video" autoplay="true"></video>
+          <canvas id='canvas'></canvas>
+        </div>
+        
           <a href="#terms" id="registerButton" class="btn modal-trigger light-green accent-2 btn-color">Registrar</a>
         </form>
       </div>
@@ -83,7 +100,9 @@
   
   <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="data.js"></script>
   <script src="main.js"></script>
+  <script src="camera.js"></script>
   <script src="firebase.js"></script>
 </body>
 

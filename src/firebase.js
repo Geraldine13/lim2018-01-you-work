@@ -8,9 +8,10 @@ var config = {
 };
 firebase.initializeApp(config);
 
-const saveVisitor = (dni, name, email, photoUrl) => {
+const saveVisitor = (date, dni, name, email, photoUrl) => {
   return firebase.database().ref('visitors/' + dni)
     .set({
+      dateVisit : date,
       dni: dni,
       username: name,
       email: email,

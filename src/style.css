@@ -68,20 +68,26 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label {
 }
 
 video {
-  width:320px;
-  height:240px;
-  margin:15px;
-  float:left;
+  width:800px;
+  height:400px;
 }
 
 canvas {
-  width:320px;
-  height:240px;
-  margin:15px;
-  float:left;
+  display: none;
 }
 
-.btn-photo {
-  clear:both;
-  margin:30px;
+.date-of-visit {
+  color: white;
+  font-size: 20px;
 }
+
+.section-photo {
+  margin-top: 30px;
+  margin-right: 0px;
+}
+
+img {
+  width: 350px;
+  height: 250px;
+}
+
