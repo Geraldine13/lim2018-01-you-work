@@ -8,15 +8,39 @@ var config = {
 };
 firebase.initializeApp(config);
 
-const saveVisitor = (date, dni, name, email, photoUrl) => {
+const saveVisitor = (date, dni, name, email, photoUrl, staff) => {
   return firebase.database().ref('visitors/' + dni)
     .set({
-      dateVisit : date,
+      dateVisit: date,
       dni: dni,
       username: name,
       email: email,
-      picture: photoUrl
+      picture: photoUrl,
+      visited: staff
     });
+}
+
+const visitReport = () => {
+  const bodyTable = document.getElementById('content-table');
+  firebase.database().ref('visitors/')
+    .on('value', (visitorsRef) => {
+      const visitors = visitorsRef.val();
+      const visitorsList = Object.keys(visitors).reverse();
+      visitorsList.forEach((id) => {
+        const visitor = visitors[id];
+        console.log(visitor);
+        bodyTable.innerHTML += `
+          <tr>
+            <td>${visitor.dateVisit}</td>
+            <td>${visitor.dni}</td>
+            <td>${visitor.username}</td>
+            <td>${visitor.email}</td>
+            <td>en prueba</td>
+            <td>${visitor.visited}</td>
+          </tr>
+          `
+      })
+    })
 }
 
 // // Registro de Usuarios Nuevos

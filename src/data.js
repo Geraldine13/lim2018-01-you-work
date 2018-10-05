@@ -4,23 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 const handleError = () => {
-  alert('Se ha presentado un error');
+  alert('Se ha presentado un error de conexión');
 }
-
-// function addStaff() {
-//   const data = JSON.parse(this.responseText);
-//   console.log(data);
-  
-//   // const article = data.response.docs[0];
-//   // const title = article.headline.main;
-//   // const snippet = article.snippet;
-
-//   // let li = document.createElement('li');
-//   // li.className = 'articleClass';
-//   // li.innerText = snippet;
-
-//   // responseContainer.appendChild(li);
-// }
 
 const getStaff = (callback) => {
   const staffRequest = new XMLHttpRequest();
@@ -30,47 +15,18 @@ const getStaff = (callback) => {
   staffRequest.send();
 }
 
-
-
 const showStaff = () => {
   getStaff(() => {
     const dataStaff = JSON.parse(event.currentTarget.responseText); 
     const selectStaff = document.getElementById('staff');
-    selectStaff.innerHTML = '';
-
+    document.innerHTML = selectStaff.value = ''; // fijar opción de selección
+    document.innerHTML = selectStaff.length = 1; // elimina la opción anterior seleccionada
     Object.keys(dataStaff).forEach((id) => {
       const staff = dataStaff[id];
-      console.log(staff);
-      
       selectStaff.innerHTML += `
-     
-      <option value="${id}">${staff.name}</option>
-      `
-
-      
-    })
-
-
-
-    // for (i in dataStaff) {
-    //   console.log(dataStaff[i]);
-    //   let option = document.createElement("option");
-    //   option.setAttribute('value', dataStaff[i].id);
-    //   option.innerText += dataStaff[i].name;
-    //   selectStaff.appendChild(option);
-    // }
-
-    // Object.keys(dataStaff).forEach((id) => {
-    //   const person = dataStaff[id];
-    //   console.log(person);
-    //   // selectStaff.option value="${id}">${person.name}</option>
-    //   
-      
-      
-      
-    // })
-    
-    
+      <option value="${staff.name}">${staff.name}</option>
+      `      
+    })    
   })
 }
 

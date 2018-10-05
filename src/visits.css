@@ -5,9 +5,10 @@ body {
   background-image: url(img/architecture-blur-building-125532.jpg);
   background-size: 100vmax 100vh;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-h1 {
+h2 {
   border: solid 2px;
   background-color: rgba(5, 1, 1, 0.767);;
   color: white;
@@ -67,10 +68,10 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label {
   font-weight: bold;
 }
 
-video {
+/* video {
   width:800px;
   height:400px;
-}
+} */
 
 canvas {
   display: none;
@@ -89,5 +90,9 @@ canvas {
 img {
   width: 350px;
   height: 250px;
+}
+
+select {
+  display: block;
 }
 
