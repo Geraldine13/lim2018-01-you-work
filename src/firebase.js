@@ -20,15 +20,17 @@ const saveVisitor = (date, dni, name, email, photoUrl, staff) => {
     });
 }
 
-const visitReport = () => {
+window.visitReport = () => {  
   const bodyTable = document.getElementById('content-table');
   firebase.database().ref('visitors/')
     .on('value', (visitorsRef) => {
       const visitors = visitorsRef.val();
+      console.log(visitors);
+      bodyTable.innerHTML='';
       const visitorsList = Object.keys(visitors).reverse();
       visitorsList.forEach((id) => {
         const visitor = visitors[id];
-        console.log(visitor);
+        
         bodyTable.innerHTML += `
           <tr>
             <td>${visitor.dateVisit}</td>

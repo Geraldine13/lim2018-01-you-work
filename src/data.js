@@ -24,7 +24,7 @@ const showStaff = () => {
     Object.keys(dataStaff).forEach((id) => {
       const staff = dataStaff[id];
       selectStaff.innerHTML += `
-      <option value="${staff.name}">${staff.name}</option>
+      <option value="${staff.email}">${staff.name}</option>
       `      
     })    
   })

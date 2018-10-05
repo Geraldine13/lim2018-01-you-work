@@ -9,15 +9,18 @@ const registerButton = document.getElementById('registerButton');
 const fecha = new Date();
 dateVisit.innerHTML = `${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()} - ${fecha.getHours()}:${fecha.getMinutes()}`;
 
+
 registerButton.addEventListener('click', () => {
   date = dateVisit.innerHTML;  
   dni = dni.value;
   nameVisitor = nameUser.value;
   emailVisitor = email.value;
+  emailStaff = selectStaff.value;  
   photoVisitor = photoImg.getAttribute('src');
-  staffVisited = selectStaff.value;  
-  saveVisitor(date, dni, nameVisitor, emailVisitor, photoVisitor, staffVisited);
+  saveVisitor(date, dni, nameVisitor, emailVisitor, photoVisitor, emailStaff);
+  sendMail(emailStaff, null, date, nameVisitor, dni);
   alert('Se ha registrado su Visita');
+
 })
 
 // selectStaff.addEventListener('change', () => {
